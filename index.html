@@ -1,0 +1,570 @@
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIWES Technical Portfolio - Adebowale</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky Blue
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for modern browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: move 10s infinite alternate;
+        }
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(20px, -20px) scale(1.1); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="bg-brand-600 text-white p-1.5 rounded-lg">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-xl tracking-tight text-slate-900">Adebowale<span class="text-brand-600">.Dev</span></h1>
+                        <p class="text-xs text-slate-500 font-medium tracking-wider">SIWES 2025</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">About</a>
+                    <a href="#experience" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Logbook</a>
+                    <a href="#projects" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Projects</a>
+                    <a href="#skills" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Skills</a>
+                    <a href="#contact" class="bg-brand-600 text-white px-5 py-2 rounded-full font-medium hover:bg-brand-700 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 p-2">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">About Placement</a>
+                <a href="#experience" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Logbook</a>
+                <a href="#projects" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Projects</a>
+                <a href="#skills" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Skills Acquired</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center rounded-md text-base font-bold bg-brand-50 text-brand-700 border border-brand-200">Contact Student</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="blob bg-brand-200 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="blob bg-indigo-200 w-80 h-80 rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3 delay-1000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-700 text-sm font-semibold mb-6 border border-brand-200">
+                Student Industrial Work Experience Scheme (2025)
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                Bridging the Gap Between <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Theory and Industry</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed">
+                A technical documentation of my 6-month industrial attachment at <span class="font-semibold text-slate-900">HiiT Plc</span>, focusing on Software Development, Mobile Apps (Flutter), and Ethical Hacking.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-brand-600 hover:bg-brand-700 md:py-4 md:text-lg shadow-lg hover:shadow-xl transition-all">
+                    View Projects
+                    <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+                <button onclick="alert('This would trigger the PDF download of the full SIWES Report.')" class="inline-flex items-center justify-center px-8 py-3 border border-slate-300 text-base font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg transition-all">
+                    <i data-lucide="file-text" class="mr-2 w-5 h-5 text-slate-500"></i>
+                    Download Full Report
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-10">
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">6</div>
+                    <div class="text-sm text-slate-500 font-medium">Months Duration</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">15+</div>
+                    <div class="text-sm text-slate-500 font-medium">Projects Completed</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">3</div>
+                    <div class="text-sm text-slate-500 font-medium">Certifications</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900">A+</div>
+                    <div class="text-sm text-slate-500 font-medium">Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student & Placement Details (About) -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="mb-10 lg:mb-0">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">About The Placement</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        My industrial training was conducted at <strong class="text-slate-800">HiiT Plc</strong> (Lekki Phase 2 Centre), Nigeria's leading ICT training institute. The program was designed to provide intensive hands-on experience in software development and cybersecurity.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Under the mentorship of Mrs. Timilehin Whetode and other senior instructors, I completed the <strong>Professional Diploma in Software Development</strong>, mastering technologies ranging from UI/UX Design to Mobile App Development with Flutter.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <h3 class="font-semibold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="user" class="w-4 h-4 text-brand-600"></i> Student Info
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">Olorunfemi Adebowale D.</p>
+                            <p class="text-sm text-slate-500">Matric: 22/10140</p>
+                            <p class="text-sm text-slate-500">Caleb University</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <h3 class="font-semibold text-slate-900 flex items-center gap-2">
+                                <i data-lucide="building-2" class="w-4 h-4 text-brand-600"></i> Company Info
+                            </h3>
+                            <p class="text-sm text-slate-600 mt-1">HiiT Plc, Lekki</p>
+                            <p class="text-sm text-slate-500">Sup: Mrs. Timilehin Whetode</p>
+                            <p class="text-sm text-slate-500">Sector: ICT Training</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative / Image area -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-brand-600 rounded-2xl transform rotate-3 opacity-10"></div>
+                    <div class="relative bg-slate-800 rounded-2xl overflow-hidden shadow-2xl min-h-[400px] flex items-center justify-center text-center p-8">
+                        <div class="text-white">
+                            <div class="inline-flex items-center justify-center p-4 bg-white/10 rounded-full mb-4">
+                                <i data-lucide="code-2" class="w-12 h-12 text-brand-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Technical Focus</h3>
+                            <ul class="text-slate-300 space-y-2 text-left mt-6 mx-auto max-w-xs">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i> UI/UX Design (Figma)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i> Flutter Mobile Dev</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i> Python & Django</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i> Certified Ethical Hacking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Logbook Timeline -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Logbook Highlights</h2>
+                <p class="mt-4 text-lg text-slate-600">A timeline of responsibilities and progress throughout the attachment.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical line -->
+                <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 -translate-x-1/2"></div>
+
+                <!-- Item 1 -->
+                <div class="relative mb-12">
+                    <div class="md:flex items-center justify-between group">
+                        <!-- Icon -->
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-brand-600 rounded-full border-4 border-slate-50 flex items-center justify-center z-10">
+                            <i data-lucide="pen-tool" class="w-3 h-3 text-white"></i>
+                        </div>
+                        
+                        <!-- Content Left -->
+                        <div class="ml-12 md:ml-0 md:w-[45%] md:pr-8 text-left md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-brand-600 font-bold text-sm tracking-wide">JUNE - JULY</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">UI/UX Design Phase</h3>
+                                <p class="mt-2 text-slate-600 text-sm">
+                                    Focused on Design Thinking, Wireframing, and Prototyping using Figma. Created complete user flows for a Food Delivery App and a Banking Dashboard.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative mb-12">
+                    <div class="md:flex items-center justify-between group flex-row-reverse">
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-brand-600 rounded-full border-4 border-slate-50 flex items-center justify-center z-10">
+                            <i data-lucide="code" class="w-3 h-3 text-white"></i>
+                        </div>
+                        
+                        <!-- Content Right -->
+                        <div class="ml-12 md:ml-0 md:w-[45%] md:pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-brand-600 font-bold text-sm tracking-wide">JULY - AUGUST</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Web Development & Python</h3>
+                                <p class="mt-2 text-slate-600 text-sm">
+                                    Mastered HTML5, CSS3, and Bootstrap for responsive web design. Advanced to Python programming, covering OOP and GUI development with Tkinter.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative mb-12">
+                    <div class="md:flex items-center justify-between group">
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-brand-600 rounded-full border-4 border-slate-50 flex items-center justify-center z-10">
+                            <i data-lucide="smartphone" class="w-3 h-3 text-white"></i>
+                        </div>
+                        
+                        <!-- Content Left -->
+                        <div class="ml-12 md:ml-0 md:w-[45%] md:pr-8 text-left md:text-right">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-brand-600 font-bold text-sm tracking-wide">AUGUST - OCTOBER</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Flutter Mobile Dev</h3>
+                                <p class="mt-2 text-slate-600 text-sm">
+                                    Built cross-platform mobile apps using Flutter & Dart. Learned state management (Provider/Bloc) and integrated Firebase for the "Task Manager Pro" project.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative">
+                    <div class="md:flex items-center justify-between group flex-row-reverse">
+                        <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-brand-600 rounded-full border-4 border-slate-50 flex items-center justify-center z-10">
+                            <i data-lucide="shield-check" class="w-3 h-3 text-white"></i>
+                        </div>
+                        
+                        <!-- Content Right -->
+                        <div class="ml-12 md:ml-0 md:w-[45%] md:pl-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                <span class="text-brand-600 font-bold text-sm tracking-wide">OCTOBER</span>
+                                <h3 class="text-xl font-bold text-slate-900 mt-1">Certified Ethical Hacking</h3>
+                                <p class="mt-2 text-slate-600 text-sm">
+                                    Hands-on labs with Kali Linux. Covered footprinting, scanning (Nmap), and system exploitation (Metasploit) as part of the CEH v12 curriculum.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hidden md:block md:w-[45%]"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900">Featured Projects</h2>
+                    <p class="mt-2 text-slate-600">Selected works from over 15 completed projects.</p>
+                </div>
+                <!-- Filter buttons (Visual only) -->
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-brand-600 text-white rounded-full text-sm font-medium">All</span>
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium hover:bg-slate-200 cursor-pointer">Mobile</span>
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm font-medium hover:bg-slate-200 cursor-pointer">Design</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1: Task Manager -->
+                <div class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                        <!-- Mockup Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 to-cyan-400 opacity-90 group-hover:scale-105 transition-transform duration-500"></div>
+                        <i data-lucide="check-square" class="relative z-10 w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded uppercase tracking-wide">Mobile App</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Task Manager Pro</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            A cross-platform productivity app featuring real-time task synchronization, categorization, and reminders. Built as part of the Flutter module.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Flutter</span>
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Firebase</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:underline">
+                            View Screens <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Django Blog -->
+                <div class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-green-500 to-emerald-500 opacity-90 group-hover:scale-105 transition-transform duration-500"></div>
+                        <i data-lucide="layout-template" class="relative z-10 w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded uppercase tracking-wide">Full Stack</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Blog Management System</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            A complete CRUD web application featuring user authentication, admin dashboard, and post management using the MVT architecture.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Django</span>
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Bootstrap</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:underline">
+                            View Code <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Food Delivery -->
+                <div class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-rose-500 opacity-90 group-hover:scale-105 transition-transform duration-500"></div>
+                        <i data-lucide="smartphone" class="relative z-10 w-12 h-12 text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded uppercase tracking-wide">UI/UX Design</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">Food Delivery App</h3>
+                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                            A complete 15-screen high-fidelity prototype covering user onboarding, restaurant listing, menu selection, and checkout flows.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Figma</span>
+                            <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">Prototyping</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-brand-600 font-semibold text-sm hover:underline">
+                            View Prototype <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-brand-600 opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-indigo-600 opacity-20 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Competencies & Certifications</h2>
+                <p class="mt-4 text-slate-400">Skills certified by HiiT Plc during the 6-month intensive training.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
+                        <i data-lucide="cpu" class="text-brand-400"></i> Technical Proficiency
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Flutter & Dart</span>
+                                <span class="text-sm font-medium text-brand-400">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-brand-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Python & Django</span>
+                                <span class="text-sm font-medium text-brand-400">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-brand-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">UI/UX Design (Figma)</span>
+                                <span class="text-sm font-medium text-brand-400">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-brand-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium text-slate-300">Ethical Hacking (Kali/Nmap)</span>
+                                <span class="text-sm font-medium text-brand-400">75%</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2.5">
+                                <div class="bg-brand-500 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications & Soft Skills -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6 flex items-center gap-2">
+                        <i data-lucide="award" class="text-brand-400"></i> Certifications
+                    </h3>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4 p-4 bg-slate-800 rounded-lg border border-slate-700">
+                            <div class="p-2 bg-brand-900 rounded text-brand-400"><i data-lucide="smartphone" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Professional Flutter Developer</h4>
+                                <p class="text-sm text-slate-400">Grade: Excellent (Sept 2025)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-slate-800 rounded-lg border border-slate-700">
+                            <div class="p-2 bg-brand-900 rounded text-brand-400"><i data-lucide="code" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-white">Professional Python Programmer</h4>
+                                <p class="text-sm text-slate-400">Grade: Excellent (Sept 2025)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+                        <i data-lucide="users" class="text-brand-400"></i> Soft Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm">Project Management</span>
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm">Design Thinking</span>
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm">Team Collaboration</span>
+                        <span class="px-3 py-1 bg-slate-800 border border-slate-700 rounded-full text-sm">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold text-slate-900">Adebowale<span class="text-brand-600">.Dev</span></h2>
+                    <p class="text-slate-500 mt-2 text-sm">SIWES Technical Report Portfolio</p>
+                    <p class="text-slate-500 text-sm mt-1">Caleb University | Computer Science</p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-slate-400 hover:text-brand-600"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-brand-600"><i data-lucide="github" class="w-5 h-5"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-brand-600"><i data-lucide="mail" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8 text-sm text-slate-600">
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="hover:text-brand-600">Placement Info</a></li>
+                            <li><a href="#experience" class="hover:text-brand-600">Logbook</a></li>
+                            <li><a href="#projects" class="hover:text-brand-600">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 mb-4">Contact</h4>
+                        <ul class="space-y-2">
+                            <li>adebowale@calebuniversity.edu.ng</li>
+                            <li>Lagos, Nigeria</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-100 mt-12 pt-8 text-center text-sm text-slate-400">
+                <p>&copy; <span id="year"></span> Olorunfemi Adebowale Damilare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Update Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
